@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react'
+import useLocalStorage from "./localStorage";
+import TodoInput from './components/todoInput'
+import List from './components/list'
+
+export const listContext = React.createContext()
+export const Header = () => <div className="App-header">todos</div>
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [list, setList] = useLocalStorage('list',[])
+    const [show, setShow] = useState('all')
+    return (
+        <div className="App">
+            <Header/>
+            <div className="App-container">
+                <listContext.Provider value={[list, setList, show, setShow]}>
+                    <TodoInput/>
+                    <List/>
+                </listContext.Provider>
+            </div>
+        </div>
+    );
 }
-
 export default App;
