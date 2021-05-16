@@ -1,0 +1,92 @@
+:root {
+  --color-gray: #ecebeb;
+  --color-text-gray: #999999;
+}
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  font-family: Consolas;
+  text-align: center;
+}
+
+.App-container {
+  height: 50vh;
+  max-width: 450px;
+  margin: auto;
+  /*pointer-events: none;*/
+}
+
+
+.App-header {
+  font-family: inherit;
+  font-size: 6rem;
+  color: #ffa946
+}
+
+.App-input {
+  border: 1px solid var(--color-gray);
+  padding: 15px 20px;
+  width: 100%;
+  font-size: 1.65rem;
+  outline: none;
+}
+
+
+.App-input::placeholder {
+  color: #c3c0c0;
+  font-family: "Times New Roman";
+  font-style: italic;
+}
+
+.App-list {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+}
+
+.App-list li{
+  width: 100%;
+  border: 1px solid var(--color-gray);
+  padding: 15px 20px;
+  font-size: 1.65rem;
+}
+
+.App-menu {
+  width: 100%;
+  display: flex;
+}
+
+.App-menu > div {
+
+}
+
+.App-menu > *{
+  padding: 10px;
+  flex: 1 auto;
+}
+
+.App-menu a{
+  color: var(--color-text-gray);
+  text-decoration: none;
+  padding: 10px
+}
+
+.App-menu a.active{
+  color: blue;
+}
+
+/*@media (prefers-reduced-motion: no-preference) {*/
+
+/*}*/
+
+/*@keyframes App-logo-spin {*/
+/*  from {*/
+/*    transform: rotate(0deg);*/
+/*  }*/
+/*  to {*/
+/*    transform: rotate(360deg);*/
+/*  }*/
+/*}*/
